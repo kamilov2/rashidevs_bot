@@ -26,6 +26,9 @@ env/
 # Media
 /media/
 /mediafiles/
+/mediafiles/check_photo/
+
+
 
 # Compiled Python bytecode
 __pycache__/
