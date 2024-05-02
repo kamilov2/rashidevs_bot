@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.sqlite3
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+
+# Logs
+*.log
+
+# IDE
+.idea/
+
+# Environment variables
+.env
+
+# Static files
+/staticfiles/
+
+# Media
+/media/
+
+# Compiled Python bytecode
+__pycache__/
+
+# Ignore Django secret key
+*.secret_key
+
+# Ignore pipenv virtual environment
+/.venv
+
+# Ignore pipenv pipfile.lock
+Pipfile.lock
+
+# Ignore Mac-specific files
+.DS_Store
+
+# Ignore Windows-specific files
+Thumbs.db
