@@ -52,7 +52,7 @@ CSP_HEADER = {
 X_FRAME_OPTIONS = 'ALLOWALL'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.serveo.net', 'https://*.lhr.life']
+CSRF_TRUSTED_ORIGINS = ['https://*.serveo.net', 'https://*.lhr.life', 'https://*.uz']
 
 # Application definition
 

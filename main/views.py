@@ -170,6 +170,6 @@ def webhook(request):
 
 def set_webhook(): 
     bot.remove_webhook()
-    bot.set_webhook(url='https://1d000c25c31ffb431338a315eaba0e27.serveo.net/webhook/')
+    bot.set_webhook(url='https://rashidevs.pyblog.uz/webhook/')
 
 set_webhook()
