@@ -140,7 +140,11 @@ def handle_check_photo(message):
         
         utc_offset = datetime.timedelta(hours=5)
         o = message.from_user.username
-        tarif_name = "Gold" if client.client_course_tarif else "Silver"  
+  
+        if client.client_course_tarif:
+            tarif_name = 'Gold'
+        else:
+            tarif_name = 'Silver'
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
