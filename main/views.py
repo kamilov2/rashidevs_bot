@@ -114,12 +114,12 @@ Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
         bot.send_message(call.message.chat.id, "Asosiy sahifaga qaytdingiz.", reply_markup=keyboard)
     elif call.data == 'silver':
-        d = Clients.objects.get(client_telegram_id=call.message.chat.id)
+        d = Clients.objects.get(client_telegram_id=call.message.from_user.id)
         d.client_course_tarif = False
         bot.send_message(call.message.chat.id, "Tolov amalga oshirish uchun rasm yuboring.")
         bot.register_next_step_handler(call.message, handle_check_photo)  
     elif call.data == 'gold':
-        d = Clients.objects.get(client_telegram_id=call.message.chat.id)
+        d = Clients.objects.get(client_telegram_id=call.message.from_user.id)
         d.client_course_tarif = True
         bot.send_message(call.message.chat.id, "Tolov amalga oshirish uchun rasm yuboring.")
         bot.register_next_step_handler(call.message, handle_check_photo)  
