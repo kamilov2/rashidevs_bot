@@ -84,7 +84,7 @@ def callback_query(call):
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         keyboard.add(types.InlineKeyboardButton(text="Ko'proq ma'lumot olish", url="https://rashidevs.uz"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
-        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/rashidevs_bot_baner.png', caption='''
+        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/rashidevsbot.png', caption='''
 Rashidevs.uz – dasturlash va zamonaviy AyTi kasblarini o'qituvchi onlayn kurslar platformasi🔥
 
 Mohirdev – bu shunchaki ta’lim emas, bu o’zgarish ishtiyoqida yonayotgan yosh yuraklar uchun bir mayoqdir.💡
