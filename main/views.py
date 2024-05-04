@@ -116,11 +116,13 @@ Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
     elif call.data == 'silver':
         d = Clients.objects.get(client_telegram_id=call.from_user.id)
         d.client_course_tarif = False
+        d.save()
         bot.send_message(call.message.chat.id, "Karta: Tolov amalga oshirilgan kvintansiya skrinshotini yuboring.")
         bot.register_next_step_handler(call.message, handle_check_photo)  
     elif call.data == 'gold':
         d = Clients.objects.get(client_telegram_id=call.from_user.id)
         d.client_course_tarif = True
+        d.save()
         bot.send_message(call.message.chat.id, "Tolov amalga oshirish uchun rasm yuboring.")
         bot.register_next_step_handler(call.message, handle_check_photo)  
 
