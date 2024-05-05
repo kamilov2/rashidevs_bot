@@ -80,7 +80,7 @@ def handle_name(message):
             client.save()
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
-            bot.send_message('-1001978302538', f"""
+            bot.send_message('-4043695351', f"""
 New User Registered on Bot:
 Name: {full_name}
 Telegram ID: {user_id}
@@ -100,13 +100,12 @@ def callback_query(call):
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         keyboard.add(types.InlineKeyboardButton(text="Ko'proq ma'lumot olish", url="https://rashidevs.uz"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
-        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/rashidevsbot.png', caption='''
-Rashidevs.uz – dasturlash va zamonaviy AyTi kasblarini o'qituvchi onlayn kurslar platformasi🔥
+        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/channel.jpg', caption='''
+Rashidevs.uz – Python dasturlash tili bo'yicha chukurlashtirilgan online ta’lim platformasi🔥
 
-Mohirdev – bu shunchaki ta’lim emas, bu o’zgarish ishtiyoqida yonayotgan yosh yuraklar uchun bir mayoqdir.💡
+Rashidevs.uz – bu shunchaki ta’lim emas, bu o’zgarish ishtiyoqida yonayotgan yosh yuraklar uchun bir mayoqdir.💡
 Hozirgi kunda:
-- 50 000+ tahsil olayotgan o'quvchilar🧑‍🎓
-- 50+ platformadagi kurslar soni mavjud📚
+- 5000+ tahsil olayotgan o'quvchilar🧑‍🎓
 Biz birgalikda har bir inson o’z hayotini AyTi bilimlari yordamida o’zgartira oladigan kelajakni yaratamiz.🙌
 ''', reply_markup=keyboard)
 
