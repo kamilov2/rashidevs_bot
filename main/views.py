@@ -62,8 +62,7 @@ def handle_new_chat_members(message: Message):
 
 @bot.message_handler(func=lambda message: message.chat.type == 'group', content_types=['text'])
 def handle_group_messages(message: Message):
-    if message.reply_to_message is None:
-        return  
+    pass
 @bot.message_handler(func=lambda message: True)
 def handle_name(message):
     try:
