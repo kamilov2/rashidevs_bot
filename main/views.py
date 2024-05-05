@@ -77,7 +77,7 @@ New User Registered on Bot:
 Name: {full_name}
 Telegram ID: {user_id}
 Telegram Username: @{message.from_user.username}
-Phone Number: {message.contact.phone_number}
+Phone Number: +{message.contact.phone_number}
 
 """)
     except Exception as e:
