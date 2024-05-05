@@ -48,7 +48,7 @@ def handle_contact(message):
         if client_exists:
             print("Royhatdan otgan!")
         else:
-            Clients.objects.create(client_telegram_id=user_id, client_phon_number=phone_number)
+            Clients.objects.create(client_telegram_id=user_id, client_phon_number=phone_number, client_username=message.from_user.username)
             print(f"User {user_id} Nomer: {phone_number}")
     except Exception as e:
         print(f"An error occurred: {e}")
