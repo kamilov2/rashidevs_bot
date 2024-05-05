@@ -131,16 +131,11 @@ rashidevs.uz - 👥bu aka-uka Ibrohim hamda Abdurahmon Rashidovlarning dasturlas
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
         bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/Banner_2.png', caption="""
 ☎️Telefon raqam: +998902113123
-
-⚡️Telegram: https://t.me/rashidevs
-
 🌐Web-site: https://rashidevs.uz
 
-
 Bizni ijtimoiy tarmoqlarda ham kuzatishingiz mumkin:👇
-
-📎 YouTube: https://youtube.com/@rashidevs?si=jb9b0Vd7ycY-vNTi
-
+⚡️Telegram: https://t.me/rashidevs
+📎 YouTube: https://www.youtube.com/@rashidevs
 📎Instagram: https://instagram.com/rashidevs
                        """, reply_markup=keyboard)
    
