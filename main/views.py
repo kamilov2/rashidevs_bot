@@ -74,6 +74,7 @@ def handle_name(message):
 
         if client_exists:
             client.client_name = full_name
+            client.client_username = message.from_user.username
             client.save()
             bot.send_message(message.chat.id, f"Assalomu alaykum {client.client_name}")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
@@ -86,6 +87,7 @@ Phone Number: +{client.client_phon_number}
     """)
         else:
             client.client_name = full_name
+            
             client.save()
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
