@@ -50,7 +50,7 @@ def handle_contact(message):
         if client_exists:
             print("Royhatdan otgan!")
         else:
-            Clients.objects.create(client_phon_number=phone_number, client_username=message.from_user.username)
+            Clients.objects.create(client_phon_number=phone_number, client_telegram_id=user_id)
             print(f"User {user_id} Nomer: {phone_number}")
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -73,10 +73,12 @@ def handle_name(message):
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
 
         if client_exists:
+            client.client_name = full_name
+            client.save()
             bot.send_message(message.chat.id, f"Assalomu alaykum {client.client_name}")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
         else:
-            client = Clients(client_telegram_id=user_id, client_name=full_name)
+            client.client_name = full_name
             client.save()
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
@@ -100,7 +102,7 @@ def callback_query(call):
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         keyboard.add(types.InlineKeyboardButton(text="Ko'proq ma'lumot olish", url="https://rashidevs.uz"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
-        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/channel.jpg', caption='''
+        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/Banner.png', caption='''
 Rashidevs.uz – Python dasturlash tili bo'yicha chukurlashtirilgan online ta’lim platformasi🔥
 
 Rashidevs.uz – bu shunchaki ta’lim emas, bu o’zgarish ishtiyoqida yonayotgan yosh yuraklar uchun bir mayoqdir.💡
