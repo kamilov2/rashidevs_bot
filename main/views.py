@@ -69,10 +69,14 @@ def handle_name(message):
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
+        if client.client_telegram_id == user_id:
+            bot.send_message(message.chat.id, f"Assalomu alaykum {client.client_name}")
+            bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
 
-        bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.", reply_markup=keyboard)
-        bot.send_message(message.chat.id, "Asosiy sahifa.")
-        bot.send_message('-1001978302538', f"""
+        else:
+            bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
+            bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
+            bot.send_message('668618297', f"""
 New User Registered on Bot:
 Name: {full_name}
 Telegram ID: {user_id}
