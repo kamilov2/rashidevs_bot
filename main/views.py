@@ -63,8 +63,7 @@ def handle_name(message):
         
         client = Clients.objects.get(client_telegram_id=user_id)
         
-        client.client_name = full_name
-        client.save() 
+
         
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
@@ -76,6 +75,8 @@ def handle_name(message):
         else:
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
+            client.client_name = full_name
+            client.save() 
             bot.send_message('668618297', f"""
 New User Registered on Bot:
 Name: {full_name}
