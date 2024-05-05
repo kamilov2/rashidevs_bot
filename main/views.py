@@ -80,12 +80,12 @@ def handle_name(message):
             client.save()
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
-            bot.send_message('668618297', f"""
-    New User Registered on Bot:
-    Name: {full_name}
-    Telegram ID: {user_id}
-    Telegram Username: @{message.from_user.username}
-    Phone Number: +{message.contact.phone_number}
+            bot.send_message('-1001978302538', f"""
+New User Registered on Bot:
+Name: {full_name}
+Telegram ID: {user_id}
+Telegram Username: @{message.from_user.username}
+Phone Number: +{message.contact.phone_number}
     """)
     except Exception as e:
         print(f"An error occurred: {e}")
