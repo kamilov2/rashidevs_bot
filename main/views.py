@@ -9,7 +9,7 @@ from telebot import types
 from .models import *
 import datetime
 from django.core.exceptions import ObjectDoesNotExist
-
+from telebot.types import Message
 import telebot
 import uuid
 
@@ -56,6 +56,14 @@ def handle_contact(message):
         print(f"An error occurred: {e}")
 
 
+@bot.message_handler(func=lambda message: message.new_chat_members is not None)
+def handle_new_chat_members(message: Message):
+    bot.send_message(message.chat.id, "Meni guruhga qoshganingiz uchun rahmat!")
+
+@bot.message_handler(func=lambda message: message.chat.type == 'group', content_types=['text'])
+def handle_group_messages(message: Message):
+    if message.reply_to_message is None:
+        return  
 @bot.message_handler(func=lambda message: True)
 def handle_name(message):
     try:
