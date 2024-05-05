@@ -69,7 +69,7 @@ def handle_name(message):
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
-        bot.send_message(message.chat.id, f"""
+        bot.send_message('-10019783025538', f"""
 New User Registered on Bot:
 Name: {full_name}
 Telegram ID: {user_id}
