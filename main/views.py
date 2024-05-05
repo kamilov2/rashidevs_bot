@@ -118,6 +118,7 @@ Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
         d.client_course_tarif = False
         d.save()
         bot.send_message(call.message.chat.id, """
+TOLOV CHEKINI YUBORING!
 💳Karta raqam: 9860 1201 1809 3505
 👤Karta egasi: Abdurahmon Rashidov
 💵Tolov miqdori:  333.000 ming s'om✅ (450.000 ming s'om)❌
@@ -133,6 +134,7 @@ Tolov chekini yuboriyotganingizda chekda tolov amalga oshirilgan sana soat daqiq
         d.client_course_tarif = True
         d.save()
         bot.send_message(call.message.chat.id, """
+TOLOV CHEKINI YUBORING!
 💳Karta raqam: 9860 1201 1809 3505
 👤Karta egasi: Abdurahmon Rashidov
 💵Tolov miqdori:  450.000 ming s'om✅ (650.000 ming s'om)❌
@@ -180,7 +182,7 @@ def handle_check_photo(message):
  ├ tarif: {tarif_name}
  └ created: {datetime.datetime.now() + utc_offset}
 '''
-        bot.send_photo('-4043695351', photo=open(photo_path, 'rb'), caption=caption)
+        bot.send_photo('-1002002883756', photo=open(photo_path, 'rb'), caption=caption)
     else:
         bot.send_message(message.chat.id, "Iltimos rasmni qaytatdan yuboring.")
 
