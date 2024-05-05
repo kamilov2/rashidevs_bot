@@ -63,8 +63,8 @@ def handle_new_chat_members(message: Message):
 @bot.message_handler(func=lambda message: message.chat.type == 'group', content_types=['text'])
 def handle_group_messages(message: Message):
     pass
-@bot.message_handler(func=lambda message: True)
-def handle_name(message):
+@bot.message_handler(func=lambda message: message.chat.type == 'private', content_types=['text'])
+def handle_private_messages(message: Message):
     try:
         user_id = message.from_user.id
         full_name = message.text
