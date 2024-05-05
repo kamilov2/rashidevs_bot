@@ -119,18 +119,17 @@ def callback_query(call):
         keyboard.add(types.InlineKeyboardButton(text="Ko'proq ma'lumot olish", url="https://rashidevs.uz"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
         bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/Banner.png', caption='''
-Rashidevs.uz – Python dasturlash tili bo'yicha chukurlashtirilgan online ta’lim platformasi🔥
+rashidevs.uz - 👥bu aka-uka Ibrohim hamda Abdurahmon Rashidovlarning dasturlashga oid loyihasi. 💪
 
-Rashidevs.uz – bu shunchaki ta’lim emas, bu o’zgarish ishtiyoqida yonayotgan yosh yuraklar uchun bir mayoqdir.💡
-Hozirgi kunda:
-- 5000+ tahsil olayotgan o'quvchilar🧑‍🎓
-Biz birgalikda har bir inson o’z hayotini AyTi bilimlari yordamida o’zgartira oladigan kelajakni yaratamiz.🙌
+📦400+ real keyslar, 👤1000 dan oshiq shogirdlar , ✔️5+ tajriba, 🔎TOP texnologiyalar va 4 yillik pedogogik mahorat bilan dasturlashga qiziqayotgan yoshlar uchun bilim berish uchun qilingan loyiha. 
+
+© Rashidevs, 2024 — Sifatli bilim berish orqali tajribali Dasturchilarni tayyorlash maqsadimiz.🎯
 ''', reply_markup=keyboard)
 
     elif call.data == 'contact':
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
-        bot.send_photo(call.message.chat.id, photo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPB7w3Z7LmbiOsNTBfKZQpK_sOv7RXRbmv2YB6EH2cMw&s', caption="""
+        bot.send_photo(call.message.chat.id, photo='https://rashidevs.pyblog.uz/media/Banner_2.png', caption="""
 ☎️Telefon raqam: +998902113123
 
 ⚡️Telegram: https://t.me/rashidevs
