@@ -8,6 +8,8 @@ from telebot.types import Update
 from telebot import types
 from .models import *
 import datetime
+from django.core.exceptions import ObjectDoesNotExist
+
 import telebot
 import uuid
 
@@ -59,34 +61,35 @@ def handle_name(message):
     try:
         user_id = message.from_user.id
         full_name = message.text
-        print(full_name.split(' '))
-        
-        client = Clients.objects.get(client_telegram_id=user_id)
-        
 
-        
+        try:
+            client = Clients.objects.get(client_telegram_id=user_id)
+            client_exists = True
+        except ObjectDoesNotExist:
+            client_exists = False
+
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
-        if client.client_telegram_id == user_id:
+
+        if client_exists:
             bot.send_message(message.chat.id, f"Assalomu alaykum {client.client_name}")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
-
         else:
+            client = Clients(client_telegram_id=user_id, client_name=full_name)
+            client.save()
             bot.send_message(message.chat.id, f"Siz muvaffaqiyatli ro'yxatdan o'tdingiz. {full_name}.")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
-            client.client_name = full_name
-            client.save() 
             bot.send_message('668618297', f"""
-New User Registered on Bot:
-Name: {full_name}
-Telegram ID: {user_id}
-Telegram Username: @{message.from_user.username}
-Phone Number: +{message.contact.phone_number}
-
-""")
+    New User Registered on Bot:
+    Name: {full_name}
+    Telegram ID: {user_id}
+    Telegram Username: @{message.from_user.username}
+    Phone Number: +{message.contact.phone_number}
+    """)
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 
 @bot.callback_query_handler(func=lambda call: True)
