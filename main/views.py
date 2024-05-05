@@ -103,10 +103,10 @@ Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
    
     elif call.data == 'payment':
         keyboard = types.InlineKeyboardMarkup(row_width=2)
-        keyboard.add(types.InlineKeyboardButton(text='Silver(333.000)', callback_data="silver"))
-        keyboard.add(types.InlineKeyboardButton(text='Gold(450.000)', callback_data="gold"))
+        keyboard.add(types.InlineKeyboardButton(text='Pilot(333.000)', callback_data="silver"))
+        keyboard.add(types.InlineKeyboardButton(text='Co Pilot(450.000)', callback_data="gold"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
-        bot.send_message(call.message.chat.id, "'Toza Pythone' kursi uchun tolov amalga oshirmoqchi bo'lgan tarifingizni tanlang.", reply_markup=keyboard)
+        bot.send_message(call.message.chat.id, "'Toza Python' kursi uchun tolov amalga oshirmoqchi bo'lgan tarifingizni tanlang.", reply_markup=keyboard)
 
     elif call.data == 'home_page_back':
         keyboard = types.InlineKeyboardMarkup(row_width=2)
@@ -117,13 +117,31 @@ Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
         d = Clients.objects.get(client_telegram_id=call.from_user.id)
         d.client_course_tarif = False
         d.save()
-        bot.send_message(call.message.chat.id, "Karta: Tolov amalga oshirilgan kvintansiya skrinshotini yuboring.")
+        bot.send_message(call.message.chat.id, """
+💳Karta raqam: 9860 1201 1809 3505
+👤Karta egasi: Abdurahmon Rashidov
+💵Tolov miqdori:  333.000 ming s'om✅ (450.000 ming s'om)❌
+
+
+ESLATMA❗️
+
+Tolov chekini yuboriyotganingizda chekda tolov amalga oshirilgan sana soat daqiqalari korinib turishi kerak  aks holda chek qabul qilinmaydi.
+                         """)
         bot.register_next_step_handler(call.message, handle_check_photo)  
     elif call.data == 'gold':
         d = Clients.objects.get(client_telegram_id=call.from_user.id)
         d.client_course_tarif = True
         d.save()
-        bot.send_message(call.message.chat.id, "Tolov amalga oshirish uchun rasm yuboring.")
+        bot.send_message(call.message.chat.id, """
+💳Karta raqam: 9860 1201 1809 3505
+👤Karta egasi: Abdurahmon Rashidov
+💵Tolov miqdori:  450.000 ming s'om✅ (650.000 ming s'om)❌
+
+
+ESLATMA❗️
+
+Tolov chekini yuboriyotganingizda chekda tolov amalga oshirilgan sana soat daqiqalari korinib turishi kerak  aks holda chek qabul qilinmaydi.
+                         """)
         bot.register_next_step_handler(call.message, handle_check_photo)  
 
 @bot.message_handler(content_types=['photo'])
@@ -144,9 +162,9 @@ def handle_check_photo(message):
         o = message.from_user.username
   
         if client.client_course_tarif:
-            tarif_name = 'Gold'
+            tarif_name = 'Co Pilot'
         else:
-            tarif_name = 'Silver'
+            tarif_name = 'Pilot'
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         for text, value in button_texts_home.items():
             keyboard.add(types.InlineKeyboardButton(text=text, callback_data=value))
