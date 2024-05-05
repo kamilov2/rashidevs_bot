@@ -77,6 +77,13 @@ def handle_name(message):
             client.save()
             bot.send_message(message.chat.id, f"Assalomu alaykum {client.client_name}")
             bot.send_message(message.chat.id, "Asosiy sahifa.", reply_markup=keyboard)
+            bot.send_message('-1001978302538', f"""
+New User Registered on Bot:
+Name: {full_name}
+Telegram ID: {user_id}
+Telegram Username: @{message.from_user.username}
+Phone Number: +{client.client_phon_number}
+    """)
         else:
             client.client_name = full_name
             client.save()
