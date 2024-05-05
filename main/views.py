@@ -115,7 +115,18 @@ Biz birgalikda har bir inson o’z hayotini AyTi bilimlari yordamida o’zgartir
         keyboard = types.InlineKeyboardMarkup(row_width=2)
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
         bot.send_photo(call.message.chat.id, photo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPB7w3Z7LmbiOsNTBfKZQpK_sOv7RXRbmv2YB6EH2cMw&s', caption="""
-Telefon: +998939113123\nTelegram: @rashidevs.\nWeb-site: https://rashidevs.uz.
+☎️Telefon raqam: +998902113123
+
+⚡️Telegram: https://t.me/rashidevs
+
+🌐Web-site: https://rashidevs.uz
+
+
+Bizni ijtimoiy tarmoqlarda ham kuzatishingiz mumkin:👇
+
+📎 YouTube: https://youtube.com/@rashidevs?si=jb9b0Vd7ycY-vNTi
+
+📎Instagram: https://instagram.com/rashidevs
                        """, reply_markup=keyboard)
    
     elif call.data == 'payment':
