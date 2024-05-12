@@ -103,7 +103,7 @@ New User Registered on Bot:
 Name: {full_name}
 Telegram ID: {user_id}
 Telegram Username: @{message.from_user.username}
-Phone Number: +{client.client_phon_number}
+Phone Number: {client.client_phon_number}
     """)
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -141,8 +141,8 @@ Bizni ijtimoiy tarmoqlarda ham kuzatishingiz mumkin:👇
    
     elif call.data == 'payment':
         keyboard = types.InlineKeyboardMarkup(row_width=2)
-        keyboard.add(types.InlineKeyboardButton(text='Pilot(333.000)', callback_data="silver"))
-        keyboard.add(types.InlineKeyboardButton(text='Co Pilot(450.000)', callback_data="gold"))
+        keyboard.add(types.InlineKeyboardButton(text='Pilot(450.000)', callback_data="silver"))
+        keyboard.add(types.InlineKeyboardButton(text='Co Pilot(600.000)', callback_data="gold"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
         bot.send_message(call.message.chat.id, "'Toza Python' kursi uchun tolov amalga oshirmoqchi bo'lgan tarifingizni tanlang.", reply_markup=keyboard)
 
