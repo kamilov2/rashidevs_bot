@@ -141,8 +141,8 @@ Bizni ijtimoiy tarmoqlarda ham kuzatishingiz mumkin:👇
    
     elif call.data == 'payment':
         keyboard = types.InlineKeyboardMarkup(row_width=2)
-        keyboard.add(types.InlineKeyboardButton(text='Pilot(450.000)', callback_data="silver"))
-        keyboard.add(types.InlineKeyboardButton(text='Co Pilot(600.000)', callback_data="gold"))
+        keyboard.add(types.InlineKeyboardButton(text='Pilot(✅333.000 ❌450.000)', callback_data="silver"))
+        keyboard.add(types.InlineKeyboardButton(text='Co Pilot(✅450.000 ❌600.000)', callback_data="gold"))
         keyboard.add(types.InlineKeyboardButton(text='🔙 Ortga', callback_data="home_page_back"))
         bot.send_message(call.message.chat.id, "'Toza Python' kursi uchun tolov amalga oshirmoqchi bo'lgan tarifingizni tanlang.", reply_markup=keyboard)
 
@@ -159,7 +159,7 @@ Bizni ijtimoiy tarmoqlarda ham kuzatishingiz mumkin:👇
 TOLOV CHEKINI YUBORING!
 💳Karta raqam: 9860 1201 1809 3505
 👤Karta egasi: Abdurahmon Rashidov
-💵Tolov miqdori:  333.000 ming s'om✅ (450.000 ming s'om)❌
+💵Tolov miqdori:  ✅333.000 ming s'om ❌(450.000 ming s'om)
 
 
 ESLATMA❗️
@@ -175,7 +175,7 @@ Tolov chekini yuboriyotganingizda chekda tolov amalga oshirilgan sana soat daqiq
 TOLOV CHEKINI YUBORING!
 💳Karta raqam: 9860 1201 1809 3505
 👤Karta egasi: Abdurahmon Rashidov
-💵Tolov miqdori:  450.000 ming s'om✅ (650.000 ming s'om)❌
+💵Tolov miqdori:  ✅450.000 ming s'om ❌(650.000 ming s'om)
 
 
 ESLATMA❗️
