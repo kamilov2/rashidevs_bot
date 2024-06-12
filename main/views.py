@@ -224,6 +224,29 @@ def handle_check_photo(message):
     else:
         bot.send_message(message.chat.id, "Iltimos rasmni qaytatdan yuboring.")
 
+
+@bot.message_handler(commands=['send_add'])
+def start(message):
+    users_for_send = Clients.objects.all()
+    for i in users_for_send:
+        bot.send_message(f'{i.client_telegram_id}', '''
+<b>100.000 so'm ishlab olishni istaysizmi ?
+Heey , alyoo ! 🙃</b>
+
+"Toza Python" online kursi uchun guruh shaklantirilyapti , dars 15-da boshlanadi 💪
+
+Kurs haqida batafsil rashidevs.uz dan ma'lumot olishingiz mumkin 😎
+
+Dars mavzulari va loyihalar haqida esa :
+https://tozapythonkursi.my.canva.site/
+
+Promokodni  @abdurakhmon_rashidov ga yuborib "O'qiyman" deb yozsangiz <b>100.000</b> so'm <b>CHEGIRMASI</b> bor !
+
+<b>PROMOKOD</b> : <b><i>TOZZA</i></b>
+
+Joylar kam qoldi ulguring !
+
+''' , parse_mode='html')
 @csrf_exempt
 def webhook(request):
     if request.method == 'POST':
